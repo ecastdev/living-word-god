@@ -1,0 +1,18 @@
+.aboutHeader{
+    background-color: blue;
+    
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* padding: 280px;  */
+    position: relative;
+}
+.aboutHeader::before {
+    content: '';
+    position: absolute;
+    top: 100px; right: 0; bottom: 0; left: 0;
+    background-color: rgba(173, 25, 25, 0.6);
+    width: 100%;
+    height: 50%;
+}
