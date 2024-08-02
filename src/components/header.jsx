@@ -2,17 +2,17 @@
 import { studentgiving } from '../assets/assest';
 import './components.css';
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
 import Typewriter from 'typewriter-effect';
+import header from './bg1.png';
 
 
 export default function Header(){
     return(
-        <div className="flex  flex-col items-center">
+        <div className="flex  flex-col">
 
-         <div className='header  items-center justify-center p-32 lg:p-72 w-screen h-screen'>
-                <div className="relative top-10 flex   items-center justify-between">
-                    <div className="grid gap-12">
+         <div className='header flex  p-32 lg:p-12 w-screen h-screen'>
+                <div className=" relative  gap-10 flex flex-col lg:flex-row   items-center ">
+                    <div className="flex flex-col w-3/4   ">
                         <motion.h1
                         initial={{
                          opacity: 0,
@@ -27,11 +27,10 @@ export default function Header(){
                          },
                        }}
                        viewport={{ once: true, direction: "down" }} 
-                 className="text-white text-2xl lg:text-6xl  font-title ">
+                 className="mt-44 text-center font-bigfont text-4xl lg:text-6xl w-full uppercase  ">
                   
-                           Together! We can cast light on <span className='text-center ml-20' >the Path to a </span> 
+                           Together! We can cast light on the Path to a 
                         </motion.h1>
-
                         <motion.h1
                         initial={{
                          opacity: 0,
@@ -46,7 +45,7 @@ export default function Header(){
                          },
                        }}
                        viewport={{ once: true, direction: "down" }} 
-           className="text-blue-800 ml-16 lg:ml-32 font-bigfont text-4xl lg:text-8xl uppercase ">
+           className="text-rose-800 lg:ml-16 lg:text-center font-bigfont text-3xl lg:text-6xl w-full uppercase ">
                                         <Typewriter
                               options={{
                                 strings: ['Brighter Tomorrow'],
@@ -56,21 +55,7 @@ export default function Header(){
                             />
                               
                         </motion.h1>
-                        <div className='w-screen  lg:w-3/5  lg:ml-32'>
-                            <p className=' text-white text-center font-extrabold'>
-                            Since 2008
-                            </p>
-                            <p className=' text-white text-center '>
-                            Religion that God our Father
-                            accepts as pure and faultless is
-                            this: to look after orphans and
-                            widows in their distress and to
-                            keep oneself from being polluted
-                            by the world. James 1:27 (NIV)
-                            </p>
-
-                    </div>
-
+                        {/* button */}
                         <motion.button
                         initial={{
                        opacity: 0,
@@ -85,23 +70,61 @@ export default function Header(){
                        },
                      }}
                      viewport={{ once: true, direction: "down" }} 
-                          className="bg-blue-900 rounded-lg p-2 text-rose-400 hover:bg-white hover:text-rose-900"> Join COMMUNITY</motion.button>
-                    </div>
+                          className="bg-rose-900 rounded-lg lg:mt-7 p-3 w-full  text-rose-400 hover:bg-white hover:text-rose-900"> Join COMMUNITY</motion.button>
                     {/* <Lottie animationData={studentgiving} loop={true} className="w-full h-full " /> */}
-                    {/* <div>
-                      <p className=' text-white text-center font-extrabold'>
-                      Since 2008
-                      </p>
-                      <p className=' text-white text-center '>
-                      Religion that God our Father
-                      accepts as pure and faultless is
-                      this: to look after orphans and
-                      widows in their distress and to
-                      keep oneself from being polluted
-                      by the world. James 1:27 (NIV)
-                      </p>
+                    <motion.div 
+                    initial={{
+                       opacity: 0,
+                       y: 50,
+                     }}
+                     whileInView={{
+                       opacity: 1,
+                       y: 0,
+                       transition: {
+                         duration: 1,
+                         delay: 1.3,
+                       },
+                     }}
+                     viewport={{ once: true, direction: "down" }} 
+                    className=' w-screen  lg:w-3/5 pt-7  '>
+                            <p className=' text-center font-extrabold'>
+                            Since 2008
+                            </p>
+                            <p className='  lg:text-center '>
+                            Religion that God our Father
+                            accepts as pure and faultless is
+                            this: to look after orphans and
+                            widows in their distress and to
+                            keep oneself from being polluted
+                            by the world. James 1:27 (NIV)
+                            </p>
 
-                    </div> */}
+                    </motion.div>
+                       
+
+                       
+                    </div>
+                    <div>
+                      <motion.img
+                      initial={{
+                       opacity: 0,
+                       x: 50,
+                     }}
+                     whileInView={{
+                       opacity: 1,
+                       x: 0,
+                       transition: {
+                         duration: 1,
+                         delay: 1.4,
+                       },
+                     }}
+                     viewport={{ once: true, direction: "down" }} 
+                       src={header} alt='header' className=' h-screen '/>
+
+                    </div>
+                    
+               
+            
 
                 </div>
          </div>

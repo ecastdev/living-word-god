@@ -72,10 +72,19 @@ export default function Navbar1() {
             </Link>
           </ul>
         </div>
+        {/* mobile open */}
+          <div className="bg-blue-900 w-screen lg:hidden h-10 flex items-center gap-10 justify-center">
 
-        <button onClick={toggleNav} className="lg:hidden hover:bg-white bg-gradient-to-r from-slate-900 to-slate-400">
-          {mobileOpen ? <X color='primary' /> : <Menu color="primary" />}
-        </button>
+            <button onClick={toggleNav} className=" hover:bg-white bg-gradient-to-r from-slate-900 to-slate-400">
+              {mobileOpen ? <X color='primary' /> : <Menu color="primary" />}
+            </button>
+            <Link to='donate'>
+              <button className="bg-red-800 text-blue-400 p-2 hover:bg-white hover:text-rose-900 rounded-lg">
+                Donate
+              </button>
+            </Link>
+          </div>
+
 
         {mobileOpen && (
           <div className="fixed right-0 z-20 bg-blue-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
@@ -92,11 +101,7 @@ export default function Navbar1() {
                 </li>
                 
               ))}
-                <Link to='donate'>
-              <button className="bg-red-800 text-blue-400 p-4 hover:bg-white hover:text-rose-900 rounded-lg">
-                Donate
-              </button>
-            </Link>
+            
               
             </ul>
           </div>
