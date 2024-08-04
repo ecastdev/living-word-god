@@ -1,7 +1,25 @@
-export default function OurAchievment(){
+"use client";
+
+import { Card, Button } from "flowbite-react";
+import { orp11, orp22, orp333, orp4 } from "../../assets/assest";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { OurachievmentData } from "./ourAchievment";
+
+export default function OurAchievment11(){
+  // button 
+  const [visibleItems, setVisibleItems] = useState(6);
+
+  // Function to load more items
+  const loadMoreItems = () => {
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 3);
+  }
+
+ 
     return(
         <div>
-            <div className="grid place-content-center gap-8 pt-20 lg:w-3/5">
+            <div className="grid place-content-center">
             <motion.h1 
             initial={{
                 opacity: 0,
@@ -16,118 +34,66 @@ export default function OurAchievment(){
                 },
               }}
               viewport={{ once: true, direction: "down" }} 
-            className='text-center text-5xl font-extrabold text-blue-900 '>More About us</motion.h1>
-            <motion.p 
-            initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1,
-                  delay: 0.7,
-                },
-              }}
-              viewport={{ once: true, direction: "down" }} 
-            className='text-center text-xl  text-blue-950 '>
-                      Edu cation al Su pport for Orph an s (On goin g):
-Su ccessfu lly secured funding for orphans in government secondary
-and primary schools.
-Provided essential basic necessities, including school uniforms,
-fees, funds, and learning materials.
+            className='text-center text-4xl  lg:text-7xl font-extrabold text-blue-900 '>Our achievment </motion.h1>
+            {/* our achievment data */}
+            <div className="grid grid-cols-1 mt-6 lg:mt-16 gap-8 lg:grid-cols-3">
+              {OurachievmentData.slice(0, visibleItems).map((ourData, index) => (
+                <div key={index}
+                initial={{
+                  opacity: 0,
+                  y: 50,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                    delay: 0.9,
+                  },
+                }}
+                // viewport={{ once: true, direction: "down" }} 
+                 >
+                 <Card
+                    className="max-w-sm"
+                    imgAlt={ourData.title}
+                    imgSrc={ourData.imgTitle}
+                    
+                  >
+                    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {ourData.title} <p className="font-bold text-rose-800">{ourData.year}</p>
+                    </h5>
+                    <p className="font-normal text-gray-700 dark:text-gray-400">
+                      {ourData.descript}
+                    </p>
+                    <Link to='volunteer' className="w-full">
+                      <Button color="failure">
+                            Read More
+                        </Button>
+                    </Link>
+                      
+                    
+                  </Card>
 
-            </motion.p>
-            <motion.p
-            initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1,
-                  delay: 0.8,
-                },
-              }}
-              viewport={{ once: true, direction: "down" }} 
-             className='text-center text-xl  text-blue-950 '>
-          Ch ristmas Get-Togeth er (December 2015):
-Hosted a heartwarming get-together for widows, the elderly, those
-living with HIV/AIDS, and the disabled.
-Provided festive meals and Christmas presents, including pieces of
-zitenje, with the event presided over by Village Headwoman
-Chakana.
+                </div>
+              ))}
 
-            </motion.p>
-            <motion.p 
-            initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1,
-                  delay: 0.9,
-                },
-              }}
-              viewport={{ once: true, direction: "down" }} className='text-center text-xl  text-blue-950 '>
-            Ch ristmas Get-Togeth er & Sh oe Donation (May, 2016):
-Some funds for the event were generously provided by Professor
-Joh n Chisi, President, and Founder of Umodzi Party (UP).
-Siku Transport Company supported u s with 2 0 0 bottles of water.
-Distributed shoes to twenty widows and the elderly, courtesy of
-Divine Sports Outreach Ministry.
-            </motion.p>
-            <motion.p 
-            initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1,
-                  delay: 1.0,
-                },
-              }}
-              viewport={{ once: true, direction: "down" }} className='text-center text-xl  text-blue-950 '>
-              Sch ool Materials Distribu tion (September, 2016):
-Dispensed school materials, including pens, pencils, and exercise
-books, to over eighty needy children and orphans.
-Part of the assistan ce was facilitated through the efforts of
-Councilor Gertrude Chirambo.
-
-            </motion.p>
-            <motion.p 
-            initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1,
-                  delay: 1.0,
-                },
-              }}
-              viewport={{ once: true, direction: "down" }} className='text-center text-xl  text-blue-950 '>
-Graveyard Tools Distribu tion an d Ou treach (December, 2016):
-Organized a significant function distributing graveyard tools to
-Chakana village, including buckets, hoes, shovels, cups, and plates.
-Treated widows, the elderly, the disabled, and orphans with food
-
-            </motion.p>
+            </div>
+            {visibleItems < OurachievmentData.length && (
+              
+                <Button color="blue" onClick={loadMoreItems}>
+                    LOAD MORE OF OUR ACHIEVMENT
+                </Button>
+              
+             
+        // <button onClick={loadMoreItems} style={buttonStyle}>
+        //   Load More
+        // </button>
+      )}
            
            
         </div>
 
         </div>
     )
+
 }

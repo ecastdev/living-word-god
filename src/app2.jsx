@@ -15,6 +15,7 @@ import { ref, storage, getDownloadURL } from './firebase/firebase.jsx';
 // import { Spinner } from "flowbite-react";
 import Skeleton from '@mui/material/Skeleton';
 import Box from '@mui/material/Box';
+import OurAchievment11 from './components/Ourachievment./ourAchievment11.jsx';
 
 function App2() {
   const [fileUrl, setFileUrl] = useState("");
@@ -38,7 +39,7 @@ function App2() {
   }, []);
   return (
 
-      <div className='flex flex-col items-center lg:flex'>
+      <div className='flex overflow-hidden  flex-col items-center lg:flex'>
 
               <Header/>
               <div className=''> 
@@ -60,8 +61,8 @@ function App2() {
               <div className='mt-9'>
                 <About/>
               </div>
-              <StayConnected/>
-              <div className=' mt-20 flex items-center justify-center flex-col lg:flex-row lg:gap-6   w-screen'> 
+              <StayConnected/> 
+              <div className='  mt-20 flex items-center justify-center flex-col lg:flex-row lg:gap-6   w-screen'> 
                 <ul className='w-full grid place-content-center lg:ml-40'>
                     {fileUrl ? (
                       <video src={fileUrl} alt="Firebase file" controls className='w-full' />
@@ -88,6 +89,7 @@ function App2() {
                
                 <Lottie animationData={studentgiving} loop={true} className="w-full  " />
               </div>
+              <OurAchievment11/>
               <Team/>
               
 

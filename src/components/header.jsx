@@ -10,7 +10,7 @@ export default function Header(){
     return(
         <div className="flex  flex-col">
 
-         <div className='header flex  p-32 lg:p-12 w-screen h-screen'>
+         <div className='header flex  p-6 lg:p-12 w-screen h-screen'>
                 <div className=" relative  gap-10 flex flex-col lg:flex-row   items-center ">
                     <div className="flex flex-col w-3/4   ">
                         <motion.h1
@@ -27,7 +27,7 @@ export default function Header(){
                          },
                        }}
                        viewport={{ once: true, direction: "down" }} 
-                 className="mt-44 text-center font-bigfont text-4xl lg:text-6xl w-full uppercase  ">
+                 className=" mt-72 lg:mt-44 text-white text-center font-bigfont text-4xl lg:text-6xl w-full uppercase  ">
                   
                            Together! We can cast light on the Path to a 
                         </motion.h1>
@@ -87,10 +87,10 @@ export default function Header(){
                      }}
                      viewport={{ once: true, direction: "down" }} 
                     className=' w-screen  lg:w-3/5 pt-7  '>
-                            <p className=' text-center font-extrabold'>
+                            <p className=' text-white  text-center font-extrabold'>
                             Since 2008
                             </p>
-                            <p className='  lg:text-center '>
+                            <p className=' text-white  lg:text-center '>
                             Religion that God our Father
                             accepts as pure and faultless is
                             this: to look after orphans and
@@ -119,7 +119,7 @@ export default function Header(){
                        },
                      }}
                      viewport={{ once: true, direction: "down" }} 
-                       src={header} alt='header' className=' h-screen '/>
+                       src={header} alt='header' className=' lg:mt-14 h-screen hidden lg:block '/>
 
                     </div>
                     

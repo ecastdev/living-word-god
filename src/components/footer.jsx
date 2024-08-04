@@ -23,7 +23,7 @@ export default function Footer1() {
   )}&body=${encodeURIComponent(body)}`;
   return (
     <Footer container className='mt-32 flex items-center '>
-      <div className="w-full bg-blue-900 ">
+      <div className="w-full bg-blue-900 shadow-lg  ">
         <div className="grid w-full justify-between items-center sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand

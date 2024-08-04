@@ -1,5 +1,6 @@
 .header{
-    background-image: url('./br.jpg');
+    /* background-image: url('./br.jpg'); */
+    background-image: url('./ourGallery/orp333.jpeg');
     width: 100%;
     height: 20%;
     background-size: cover;
@@ -12,10 +13,11 @@
     content: '';
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    /* background-color: rgba(36, 8, 139, 0.6);
-    width: 50%;
-    height: 50%; */
-    /* opacity: 0.3; */
+    background-color: rgba(7, 2, 24, 0.6);
+    width: 100%;
+    height: 100%;
+    /* opacity: 0.9; */
+    
 }
 .stay{
     background-image: url('./ourGallery/orp333.jpeg');
@@ -23,6 +25,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     /* padding: 280px;  */
     position: relative;
    

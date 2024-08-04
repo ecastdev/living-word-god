@@ -7,7 +7,7 @@ import Footer1 from './components/footer';
 
 function App() {
   return (
-    <div className="">
+    <div className="flex overflow-hidden flex-col items-center">
       
       <Navbar1/>
       <div>

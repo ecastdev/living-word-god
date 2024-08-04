@@ -3,6 +3,7 @@ import { Menu, X } from "@mui/icons-material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logos from "./assests/ll.png";
+import { Divider } from "@mui/material";
 
 export default function Navbar1() {
   // Navigation links
@@ -41,7 +42,7 @@ export default function Navbar1() {
   };
 
   return (
-    <nav className="fixed z-50 top-0 w-full py-3 h-24 bg-blue-900 rounded-lg border-b border-neutral-700/80">
+    <nav className="fixed  shadow-lg shadow-rose-500 z-50 top-0 w-full py-3 h-24 bg-blue-900 rounded-lg border-b border-neutral-700/80">
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
@@ -87,13 +88,15 @@ export default function Navbar1() {
 
 
         {mobileOpen && (
-          <div className="fixed right-0 z-20 bg-blue-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed  lg:right-0 z-20 bg-rose-400 w-screen lg:w-full lg:p-12 flex flex-col justify-center items-center lg:hidden">
             <ul>
               {nav.map((item, index) => (
-                <li key={index} className="py-4">
+                <li key={index} className="py-2">
+                  <Divider/>
+                  <li className="bg-white w-96 h-px"></li>
                   <Link
                     to={item.label}
-                    className="text-white text-xl"
+                    className=" text-center "
                     onClick={() => clickLink(item.label)}
                   >
                     {item.listName}

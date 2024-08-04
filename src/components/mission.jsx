@@ -38,7 +38,7 @@ export default function OurMission(){
         },
     ]
     return(
-        <div className="flex flex-col items-centh-screen pt-60 lg:pt-10 mt-96 lg:mt-16">
+        <div className="flex flex-col items-center h-screen pt-60 lg:pt-10 mt-96 lg:mt-16">
             <motion.h1
             initial={{
                opacity: 0,
@@ -53,7 +53,7 @@ export default function OurMission(){
                },
              }}
              viewport={{ once: true, direction: "down" }} 
-             className="text-blue-950 text-center text-3xl lg:text-7xl font-bold">
+             className="text-blue-950 text-center text-5xl lg:text-7xl font-bold">
                 Our Activity
             </motion.h1>
             <Lottie  animationData={lovegiving} loop={true}
@@ -73,7 +73,7 @@ export default function OurMission(){
              }}
              viewport={{ once: true, direction: "down" }} 
              
-              className="mt-2 lg:mt-9 grid grid-cols-2 max-w-3xl place-content-center   lg:grid-cols-3 lg:gap-9">
+              className="mt-2 lg:mt-9 grid grid-cols-2 max-w-96 lg:max-w-3xl place-content-center  lg:grid-cols-3 lg:gap-9">
                         {missionData.map((activi, index) => (
                           <motion.div
                           initial={{

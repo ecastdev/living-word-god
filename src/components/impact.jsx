@@ -5,8 +5,8 @@ import { CommuteTwoTone,} from "@mui/icons-material"
 export default function Impact(){
     return(
         // <div className="">
-             <div className="grid place-content-center w-full lg:w-screen bg-rose-900 h-3/5 gap-20 lg:gap-60 mt-96 lg:mt-2 lg:pt-4 pt-10   lg:grid-flow-col">
-                  <div className="max-w-96">
+             <div className="relative grid place-content-center w-full lg:w-screen bg-rose-900 h-3/5 gap-20 lg:gap-60 mt-96 lg:mt-2 lg:pt-4 pt-10   lg:grid-flow-col">
+                  <div className="lg:max-w-96">
                       <motion.h1
                       initial={{
                         opacity: 0,
