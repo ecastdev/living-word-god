@@ -69,7 +69,7 @@ function App2() {
                     ) : (
                       <Box
                           sx={{
-                            bgcolor: '#121212',
+                            bgcolor: '#0000',
                             p: 8,
                             width: '100%',
                             display: 'flex',
@@ -92,7 +92,6 @@ function App2() {
               <OurAchievment11/>
               <Team/>
               
-
 
           
       </div>
