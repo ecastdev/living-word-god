@@ -80,7 +80,7 @@ function App2() {
                             sx={{ bgcolor: 'grey.900' }}
                             variant="rectangular"
                             width={400}
-                            height={118}
+                            height={400}
                           />
                       </Box>
                       // <Spinner aria-label="Extra large spinner example" size="xl" />

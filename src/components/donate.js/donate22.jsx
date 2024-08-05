@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 export default function Donate22(){
     // payment form handling
         const [amount, setAmount] = useState("");
-        const [currency, setCurrency] = useState("KES"); // Example: KES for Kenya
+        const [currency, setCurrency] = useState("MWK"); // Example: KES for Kenya
         const [phoneNumber, setPhoneNumber] = useState("");
-        const [country, setCountry] = useState("KE"); // Example: KE for Kenya
+        const [country, setCountry] = useState("MW"); // Example: KE for Kenya
         const [message, setMessage] = useState("");
 
     const handleSubmit = async (e) => {
@@ -94,7 +94,7 @@ export default function Donate22(){
                                     <option value="UGX">UGX</option>
                                     <option value="TZS">TZS</option>
                                     <option value="ZMW">ZMW</option>
-                                    <option value="ZMW">Mk</option>
+                                    <option value="MWK">MWK</option>
                                 </select>
                                 </div>
                                 <div>
@@ -119,7 +119,7 @@ export default function Donate22(){
                                     <option value="UG">Uganda</option>
                                     <option value="TZ">Tanzania</option>
                                     <option value="ZM">Zambia</option>
-                                    <option value="ZM">Malawi</option>
+                                    <option value="MW">Malawi</option>
                                 </select>
                             </div>
                       <button type="submit" className="bg-rose-700 text-white rounded-lg p-3">Donate Now</button>
