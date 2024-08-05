@@ -11,7 +11,7 @@ import { Facebook, Google } from '@mui/icons-material';
 
 
 export default function Header(){
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef(null);
     return(
         <div className="flex  flex-col">
@@ -112,9 +112,8 @@ export default function Header(){
                                 <div className="flex justify-center text-sm font-extrabold text-gray-500 dark:text-gray-300">
                                       <Facebook fontSize='large' color='primary'/> 
                                       <Google fontSize='large'/>
-                                  
-                                  
                                 </div>
+
                               </div>
                             </Modal.Body>
                           </Modal>

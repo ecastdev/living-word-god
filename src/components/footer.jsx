@@ -2,25 +2,35 @@
 "use client";
 
 import { Footer } from "flowbite-react";
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import {  BsFacebook,  BsInstagram, BsTwitter } from "react-icons/bs";
 import { ContactMail, ContactMailTwoTone, EmailTwoTone, FacebookTwoTone, Instagram, Key, LocationSearchingTwoTone, SocialDistance, WhatsApp, WhatshotTwoTone } from "@mui/icons-material"
 import { logos } from "../assets/assest";
 export default function Footer1() {
-  // whatsapp button
+  const fbUrl = 'https://www.facebook.com/profile.php?id=100080190607869'
+    // whatsapp button
  
     const phoneNumber = "+265885177192"; // Use international format
     const message = "Hello, Am interested in participating and donating into your organization";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
+    // whatsappp group 
+    const grouplink = "https://chat.whatsapp.com/LYjEVoX0ZMM1qwaDTbcgea";
+    const whatsappgroup = `https://wa.me/${grouplink}`;
+
+  
+    
+  
     // email intergrating 
-    const recipient = "mtawaliecast@gmail.com";
+    const recipient = "lwgministriesmalawi@gmail.com";
   const subject = "Hello from living word of God faith organisation";
   const body = "Hello, Am interested in participating and donating into your organization.";
 
   const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
     subject
-  )}&body=${encodeURIComponent(body)}`;
+  )}&body=${encodeURIComponent(body)}`
+
+
   return (
     <Footer container className='mt-32 flex items-center '>
       <div className="w-full bg-blue-900 shadow-lg  ">
@@ -44,8 +54,8 @@ export default function Footer1() {
             <div>
               <Footer.Title title="Follow us" className='text-white' />
               <Footer.LinkGroup col>
-                <Footer.Link href="#" className='text-white font-light'> <FacebookTwoTone/> Facebook</Footer.Link>
-                <Footer.Link href="#" className='text-white font-light'> <Instagram/> Instagram</Footer.Link>
+                <Footer.Link href={fbUrl} className='text-white font-light'> <FacebookTwoTone/> Facebook</Footer.Link>
+                <Footer.Link href={whatsappgroup} className='text-white font-light'> <Instagram/> Instagram</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -65,8 +75,7 @@ export default function Footer1() {
             <Footer.Icon href="#" icon={BsFacebook} />
             <Footer.Icon href="#" icon={BsInstagram} />
             <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="#" icon={BsGithub} />
-            <Footer.Icon href="#" icon={BsDribbble} />
+       
           </div>
         </div>
       </div>

@@ -1,9 +1,33 @@
 import { ContactMail, ContactMailTwoTone, DesignServicesTwoTone, EmailTwoTone,Facebook,FollowTheSignsTwoTone , Key, LocationSearchingTwoTone, SocialDistance, WhatsApp } from "@mui/icons-material"
 import { Button, Checkbox, TextInput, Label, Select } from "flowbite-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 export default function Contact(){
+  const fbUrl = 'https://www.facebook.com/profile.php?id=100080190607869'
+    // whatsapp button
+ 
+    const phoneNumber = "+265885177192"; // Use international format
+    const message = "Hello, Am interested in participating and donating into your organization";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    // whatsappp group 
+    const grouplink = "https://chat.whatsapp.com/LYjEVoX0ZMM1qwaDTbcgea";
+    const whatsappgroup = `https://wa.me/${grouplink}`;
+
+  
+    
+  
+    // email intergrating 
+    const recipient = "lwgministriesmalawi@gmail.com";
+  const subject = "Hello from living word of God faith organisation";
+  const body = "Hello, Am interested in participating and donating into your organization.";
+
+  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`
     const contactData = [
         {
             // icons: <LocationSearchingTwoTone fontSize="large"/>,
@@ -16,6 +40,8 @@ export default function Contact(){
             titleIcons: "Contact",
             description: "+265 998606176" ,  
             moreContent: "livingwordofgod@gmail.com",
+            emailLink : mailtoLink ,
+            wapLink: whatsappUrl ,
             icons2:  <ContactMailTwoTone  color="primary"/>, 
             icons3:  <EmailTwoTone  color="primary"/>, 
         }, 
@@ -23,7 +49,9 @@ export default function Contact(){
             // icons:  <FollowTheSignsTwoTone fontSize="large"/>, 
             titleIcons: "Follow us",
             description: <Facebook fontSize="large" color="primary" /> ,
-            moreContent: <WhatsApp fontSize="large" color="primary"/>
+            moreContent: <WhatsApp fontSize="large" color="primary"/>,
+            wapLink: fbUrl ,
+            emailLink : whatsappgroup ,
         }
     ]
     return(
@@ -81,23 +109,30 @@ export default function Contact(){
                                 <h5 className="text-3xl  lg:text-5xl font-bold tracking-tight text-blue-900 dark:text-white">
                                 {Cdata.titleIcons}
                                 </h5>
-                                <p className="font-normal   dark:text-gray-400">
-                                  <span>{ Cdata.icons2}</span>
-                                { Cdata.description}
-                                </p>
+                                
+                                  <Link to={Cdata.wapLink} className="font-normal   dark:text-gray-400">
+                                    <span>{ Cdata.icons2}</span>
+                                    { Cdata.description}
+                                  </Link>
+                                 
+                               
                                 <p className="font-normal mt-6   dark:text-gray-400">
-                                <span>{ Cdata.icons3}</span>
-                                {Cdata.moreContent}
+                                  <Link  to={Cdata.emailLink}>
+                                    <span>{ Cdata.icons3}</span>
+                                    {Cdata.moreContent}
+                                  </Link>
+                               
                                 </p>
                         </div>
                    </motion.div>
                 ))}
             </div>
-            <h1 className="text-rose-950 text-3xl mt-20 font-medium">Get a straight contact to us</h1>
+            
+            <h1 className="text-rose-950 text-center text-3xl mt-20 font-medium">Get a straight contact to us</h1>
 
             <div className='flex flex-col lg:flex-row mt-7  lg:mt-6 items-center gap-20 justify-space-between'>
 
-                    <form className="flex lg:w-2/5 flex-col gap-4">
+                    <form className="flex  max-w-80 lg:w-2/5 flex-col gap-4">
                     <div>
                       <div className="mb-2 block">
                         <Label htmlFor="email1" value="Your email" />

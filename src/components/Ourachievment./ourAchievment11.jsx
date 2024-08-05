@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, Button } from "flowbite-react";
-import { orp11, orp22, orp333, orp4 } from "../../assets/assest";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -54,7 +53,7 @@ export default function OurAchievment11(){
                 // viewport={{ once: true, direction: "down" }} 
                  >
                  <Card
-                    className="max-w-sm"
+                    className="max-w-80 lg:max-w-sm "
                     imgAlt={ourData.title}
                     imgSrc={ourData.imgTitle}
                     

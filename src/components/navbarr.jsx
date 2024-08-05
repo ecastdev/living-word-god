@@ -76,7 +76,7 @@ export default function Navbar1() {
         {/* mobile open */}
           <div className="bg-blue-900 w-screen lg:hidden h-10 flex items-center gap-10 justify-center">
 
-            <button onClick={toggleNav} className=" hover:bg-white bg-gradient-to-r from-slate-900 to-slate-400">
+            <button onClick={toggleNav} className=" hover:bg-white bg-gradient-to-r from-blue-100 to-slate-400">
               {mobileOpen ? <X color='primary' /> : <Menu color="primary" />}
             </button>
             <Link to='donate'>
@@ -88,7 +88,7 @@ export default function Navbar1() {
 
 
         {mobileOpen && (
-          <div className="fixed  lg:right-0 z-20 bg-rose-400 w-screen lg:w-full lg:p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed  lg:right-0 z-20 bg-blue-100 w-screen lg:w-full lg:p-12 flex flex-col justify-center items-center lg:hidden">
             <ul>
               {nav.map((item, index) => (
                 <li key={index} className="py-2">
@@ -96,7 +96,7 @@ export default function Navbar1() {
                   <li className="bg-white w-96 h-px"></li>
                   <Link
                     to={item.label}
-                    className=" text-center "
+                    className=" ml-32 text-center  text-xl "
                     onClick={() => clickLink(item.label)}
                   >
                     {item.listName}
